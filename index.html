@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>timedquiz</title>
+  </head>
+  <body>
+  <!---view high score and timer-->
+     <Header>
+ <button for ="viewhighscore"> View Highscore</button>
+ <!--show score result -->
+ <p></p>
+   
+ <lable for="timer : ">Timer</lable>
+ <p id="sec"></p>
+     </Header>
+
+   <!---quiz-->
+     <section>
+    <!---Qs&options-->
+    <div class="quiz">
+        <div class="q1">
+    <h1>String values must be enclosed within____ when being assigned to variables</h1>
+    <ul class="option1">
+        <li>1. commas</li>
+        <li>2. curly brackets</li>
+        <li id="a1">3. quotes</li>
+        <li>4. parentheses</li>
+    </ul>
+    </div>
+
+    <div class="q2">
+    <h1>The condition in an if / else statement is enclosed within _____.</h1>
+    <ul class="option2">
+        <li>1. quotes</li>
+        <li>2. curly brackets</li>
+        <li>3. parentheses</li>
+        <li>4. square bracelets</li>
+    </ul>
+    </div>
+      
+      
+      </div>
+     <!--result-->
+     <p class="results"></p>
+     </section>
+    
+     <div class="end">
+        <h1>Thank you</h1>
+        <p></p>
+     </div>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

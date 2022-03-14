@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 2px solid;
+}
+h1 {
+  font-size: medium;
+  font-weight: 200;
+}
+p {
+  font-size: small;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+    font-size: small;
+}
+
+.quiz {
+    font-family:"Montserrat", sans-serif;
+    text-align: center;
+    width: 500px;
+    height: 400px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.q1 {
+ /* margin:;
+ padding:; */
+}
+
+.option1 li {
+    margin: 10px;
+    cursor:pointer;
+}
+
+
+.option1 li:hover {
+    background:peru;
+    width: 80px;
+    margin: 0 auto;
+    padding:5 px;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+
+/*Display change Properties */
+.q1 {
+    display:block;
+}
+
+.q2 {
+    display:none;
+}
+
+.end {
+    display:none;
+}
