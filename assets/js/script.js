@@ -14,6 +14,7 @@ const end = document.querySelector(".end");
 
 //select result for each quiz//
 const results=document.querySelector('.results');
+//const choice=document.querySelector('li');
 const select =document.querySelector('#a1');
 
  
@@ -22,9 +23,11 @@ const select =document.querySelector('#a1');
 //when result=correct, click again, jump to next question//
 //count, right result, when right result >1, move to next quiz//
 ul_1.addEventListener ("click", function () {
-const choice = select.value;
-console.count(choice);
 
+ 
+select.onclick = function updateresult (){
+    results.textContent='Correct!';
+}
 
 // if (choice === '3. quotes'){
 // //     //right answer select
@@ -32,8 +35,8 @@ console.count(choice);
 // //    //count the time of right selected time >0
          //need to consider event bubble here
 // //    //display message
-    // q1.style.display ="none";
-    // q2.style.display="block";}
+q1.style.display ="none";
+q2.style.display="block";
 
 // else {
 //     results.textContent='Wrong!';
