@@ -12,7 +12,7 @@ p {
   font-size: small;
 }
 
-li {
+button {
     text-decoration: none;
     list-style: none;
     font-size: small;
@@ -20,25 +20,22 @@ li {
 
 .quiz {
     font-family:"Montserrat", sans-serif;
-    text-align: center;
+    /* text-align: center; */
     width: 500px;
-    height: 400px;
+    height: 200px;
     margin: 5px;
     padding: 5px;
 }
 
-.q1 {
- /* margin:;
- padding:; */
-}
 
-.option1 li {
+
+.option-container button {
     margin: 10px;
     cursor:pointer;
 }
 
 
-.option1 li:hover {
+.option-container button:hover {
     background:peru;
     width: 80px;
     margin: 0 auto;
@@ -48,14 +45,6 @@ li {
 }
 
 
-/*Display change Properties */
-.q1 {
-    display:block;
-}
-
-.q2 {
-    display:none;
-}
 
 .end {
     display:none;
