@@ -15,7 +15,16 @@ const Questions = [{
         {text: "15", isCorrect: false},
         {text: "3", isCorrect: false},
         {text: "50", isCorrect: true}
+        ]},
+
+    {id: 2,
+    q: "What is 10-5?",
+    a: [{text: "5", isCorrect: true},
+        {text: "15", isCorrect: false},
+        {text: "3", isCorrect: false},
+        {text: "50", isCorrect: false}
         ]
+    
     }
 ]
 
@@ -30,9 +39,9 @@ console.log(Questions[0]);
 //Set Start
 var start =true;
 
-//Interate
+//question and results
 function iterate(id) {
-
+    
     //show result
     var result =document.getElementsByClassName ("result");
     result[0].innerText="";
@@ -40,7 +49,7 @@ function iterate(id) {
     //define question
     const question = document.getElementById("quiz");
 
-    //show question text
+    //show question text from array
     question.innerText=Questions[id].q;
 
     //define options
@@ -64,7 +73,7 @@ function iterate(id) {
 
 var seleted="";
 
-   //add correct value for options
+   //add correct value for option1
    op1.addEventListener ("click", () => {
     seleted = op1.value;
     if (seleted =="true"){
@@ -73,7 +82,7 @@ var seleted="";
         result[0].innerHTML ="Wrong";}
 })
 
-    //add correct value for options
+    //add correct value for option2
     op2.addEventListener ("click", () => {
         seleted = op2.value;
         if (seleted =="true"){
@@ -82,7 +91,7 @@ var seleted="";
             result[0].innerHTML ="Wrong";}
     })
 
-    //add correct value for options
+    //add correct value for option3
    op3.addEventListener ("click", () => {
     seleted = op3.value;
     if (seleted =="true"){
@@ -91,9 +100,9 @@ var seleted="";
         result[0].innerHTML ="Wrong";}
 })
 
-   //add correct value for options
+   //add correct value for option4
    op4.addEventListener ("click", () => {
-    seleted = op1.value;
+    seleted = op4.value;
     if (seleted =="true"){
     result[0].innerHTML ="Correct";}
     else {
@@ -106,12 +115,29 @@ var seleted="";
         iterate("0");
     }
 
+  //jump to next questions   
+const next = document.getElementsByClassName('next')[0];
+var id=0;
+
+next.addEventListener ("click", () => {
+    start=false;
+    if (id <3) {
+        id++;
+        iterate(id);}
+     
+    else {
+        document.querySelector('section').style.display ="none";
+        document.getElementById('end').style.display="block";
+         }
+
+    
+}
+)
 
 
-
-// this still neeed, as it is complete quiz and show last page
-// question.id:2.addEventListener ("click", function () {
-//     quiz.style.display ="none";
+// this still need, as it is complete quiz and show last page
+// Questions[2].addEventListener ("click", function () {
+//     Questions.style.display ="none";
 //     end.style.display="block";
 // });
 
