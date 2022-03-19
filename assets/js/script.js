@@ -119,15 +119,33 @@ var seleted="";
 const next = document.getElementsByClassName('next')[0];
 var id=0;
 
+// next.addEventListener ("click", () => {
+//     start=false;
+//     if (id <3) {
+//         id++;
+//         iterate(id);}
+     
+//     if (id=3) {
+//         document.querySelector('section').style.display ="none";
+//         document.getElementById('end').style.display="block";
+//         break;}
+
+// }
+// )
+
 next.addEventListener ("click", () => {
     start=false;
-    if (id <3) {
+    switch(id) {
+        case id<3:
         id++;
-        iterate(id);}
+        iterate(id);
+        break;
      
-    else {
+    
+        case id=3:
         document.querySelector('section').style.display ="none";
         document.getElementById('end').style.display="block";
+        break;
          }
 
     
@@ -135,12 +153,29 @@ next.addEventListener ("click", () => {
 )
 
 
-// this still need, as it is complete quiz and show last page
-// Questions[2].addEventListener ("click", function () {
-//     Questions.style.display ="none";
-//     end.style.display="block";
-// });
-
-//Quiz Result//
 
 
+//Result Page submit initial//
+
+//define submit
+const savedName=document.getElementById("ini");
+const submitButton=document.getElementById("submit");
+
+//submit function, put value as localstorage
+
+submitButton.addEventListener ("click", function(event) {
+    event.preventDefault();
+
+    const submit= {
+        initial: savedName.value,
+    };
+
+ localStorage.setItem ("submit",JSON.stringify(submit));
+ renderMessage();  
+    
+});
+
+function renderMessage() {
+    const submitName=JSON.parse(localStorage.getItem("submit"));
+    document.getElementById("value").textContent="- "+submitName.initial
+}

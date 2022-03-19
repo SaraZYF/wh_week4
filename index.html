@@ -42,15 +42,25 @@
     <!--result page-->
      <div class="end" id="end">
         <h1>All done!</h1>
+        <!--todo xx-->
         <p>Your final score is xx</p>
-        <form>Enter Initials:
-          <input type="text" name="Initials">
-        </form>
-        <button class ="submit" id="submit">Submit
-        </button>
+        <form>
+          <label for="ini">Enter Initials:<label>
+          <textarea id="ini" name="Initials"></textarea>
+        
+        <button id="submit">Submit</button>
         </p>
+      </form>     
+
 
      </div>
+
+     <!--show score-->
+<div class="score"  id="score">
+  <h1>HighScores</h1>
+  <label for="value">Result is: </label><input id="value" name="scoreini">
+</div>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
