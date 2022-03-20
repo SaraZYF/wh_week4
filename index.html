@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head> 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -12,31 +12,40 @@
      <Header>
  <button for ="viewhighscore"> View Highscore</button>
  <!--show score result -->
- <p></p>
   
  <!--timer-->
- <p>Timer<span id="timer">60</span></p>
+ <p id="rightbox">Timer<span id="timer">60</span></p>
      </Header>
 
+<!--start-->
+<div class="begin" id="begin">
+  <h1>Start the quiz</h1>
+  <p>this is the quiz test</p>
+  <button id="quizbegin">Begin Test</button>
+</div>
+     
    <!---quiz-->
      <section>
     <!---Qs&options-->
     
-    <h1>Questions shows below</h1>
+   
     <div class="question" id="quiz"></div>
     
     <div class="option-container">
-        <button class="option" onclick="" id="op1">option1</button>
-        <button class="option"  id="op2">option2</button>
-        <button class="option"  id="op3">option3</button>
-        <button class="option"  id="op4">option4</button>
+      <ul>
+        <li><button class="option" onclick="" id="op1">option1</button></li>
+        <li><button class="option"  id="op2">option2</button></li>
+        <li><button class="option"  id="op3">option3</button></li>
+        <li><button class="option"  id="op4">option4</button></li>
+    </ul>
+  
     </div>
-     
      <!--result-->
      <div class="result"></div>
-   
+    
      <!--next quiz-->
-    <div><button class="next">Next</button></div>
+    <div class="jump"><button class="next">Next</button></div>
+    </div>
   </section>
 
     <!--result page-->

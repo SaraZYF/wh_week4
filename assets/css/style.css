@@ -2,10 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 2px solid;
+    /* border: 2px solid; */
 }
 h1 {
-  font-size: medium;
+  font-size: large;
   font-weight: 200;
 }
 p {
@@ -15,8 +15,50 @@ p {
 button {
     text-decoration: none;
     list-style: none;
-    font-size: small;
+    font-size: medium;
+    border-radius: 5px ;
+    background-color: rgb(121, 28, 209);
+    color:white;
+    
 }
+
+/* header section */
+header{
+    position: relative;
+}
+
+p#rightbox {
+    position:absolute;
+    right:0;
+    width:100px;
+    top: -3px;
+   
+}
+
+/* begin, end, score section */
+div#begin , div#end, div#score{
+    position:absolute;
+    right: 10%;
+    left:10%;
+    width:800px;
+    height:500px;
+    margin:30px;
+    text-align:center;
+}
+
+.section {
+    flex-direction:column wrap;
+}
+/* questions section */
+
+div.question, div.option-container, div.result, div.jump{
+    width:800px;
+    text-align:center;
+    right:10%;
+    left:10%;
+}
+
+
 
 .quiz {
     font-family:"Montserrat", sans-serif;
@@ -29,14 +71,22 @@ button {
 
 
 
-.option-container button {
+.option-container button, begin button, end button {
     margin: 10px;
     cursor:pointer;
 }
 
+.begin button:hover{
+    background:rgb(203, 127, 238);
+    width: 80px;
+    margin: 0 auto;
+    padding:5 px;
+    border-radius: 3px;
+    transition: 0.3s ease; 
+}
 
-.option-container button:hover {
-    background:peru;
+.jump button :hover {
+    background:rgb(203, 127, 238);
     width: 80px;
     margin: 0 auto;
     padding:5 px;
@@ -44,7 +94,23 @@ button {
     transition: 0.3s ease;
 }
 
+.option-container button:hover {
+    background:rgb(203, 127, 238);
+    width: 80px;
+    margin: 0 auto;
+    padding:5 px;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
 
+.end button:hover {
+    background:rgb(203, 127, 238);
+    width: 80px;
+    margin: 0 auto;
+    padding:5 px;
+    border-radius: 3px;
+    transition: 0.3s ease;  
+}
 
 .end {
     display:none;

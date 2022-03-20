@@ -28,19 +28,23 @@ const Questions = [{
     }
 ]
 
-// console.log(Questions[0]);
 
 //complete quiz, hide and show end//
 
-// const quiz = document.querySelector(".quiz");
-// const end = document.querySelector(".end");
-
+   const begin = document.getElementById ("begin");
+   const quizsection=document.querySelector('section');
+   const end = document.getElementById ("end");
+   const score=document.getElementById ("score");
+// set default for blocks
+   quizsection.style.display="none";
+   score.style.display="none";
  
 //Set Start
 var start =true;
 
-//Set Score
+//Set accumlated score
 var count=0;
+count++;
 
 //question and results
 function iterate(id) {
@@ -81,7 +85,7 @@ var seleted="";
     seleted = op1.value;
     if (seleted =="true"){
     result[0].innerHTML ="Correct";
-    count ++;}
+    sum.innerHTML=count++;}
     else {
         result[0].innerHTML ="Wrong";}
 })
@@ -91,7 +95,7 @@ var seleted="";
         seleted = op2.value;
         if (seleted =="true"){
         result[0].innerHTML ="Correct";
-        count ++;}
+       }
         else {
             result[0].innerHTML ="Wrong";}
     })
@@ -101,7 +105,7 @@ var seleted="";
     seleted = op3.value;
     if (seleted =="true"){
     result[0].innerHTML ="Correct";
-    count ++;}
+    }
     else {
         result[0].innerHTML ="Wrong";}
 })
@@ -111,7 +115,7 @@ var seleted="";
     seleted = op4.value;
     if (seleted =="true"){
     result[0].innerHTML ="Correct";
-    count ++;}
+    }
     else {
         result[0].innerHTML ="Wrong";}
 })
@@ -133,8 +137,9 @@ next.addEventListener ("click", () => {
         iterate(id);}
      
     else {
-        document.querySelector('section').style.display ="none";
-        document.getElementById('end').style.display="block";
+        quizsection.style.display ="none";
+        end.style.display="block";
+        
         }
 
 });
@@ -165,9 +170,7 @@ function saveini () {
 function renderscoreini() {
     const submitName=JSON.parse(localStorage.getItem("submit"));
     if (submit !==null) {
-//WIP
-   document.getElementById('end').style.display ="none";
-   document.getElementById('score').style.display="block";
+
 //WIP
     document.getElementById("scoreini").innerHTML=submitName.initial;}
     else {
@@ -179,6 +182,12 @@ submitButton.addEventListener ("click", function(event) {
    event.preventDefault();
    saveini();
    renderscoreini();
+   if (end.style.display !=="none") {
+       end.style.display ="none";
+       score.style.display="block";
+   } else {
+       end.style.display="block";
+   }
    
 });
 
@@ -188,6 +197,18 @@ function init() {
 }
 
 init();
+
+//begin quiz button event
+quizbegin.addEventListener ("click", function () {
+    if(begin.style.display !=="none") {
+        quizsection.style.display="block";
+        begin.style.display="none";
+    } else {
+        begin.style.display = "block";
+    }
+}
+);
+
 
 //WIP, sum the score
 // function sumcount () {
@@ -207,6 +228,7 @@ document.getElementById("timer").innerHTML= String(timeLeft);
 if (timeLeft >0) {
     setTimeout(countdown,1000);
 }
+
 };
 
 setTimeout(countdown,1000);
