@@ -43,8 +43,8 @@ const Questions = [{
 var start =true;
 
 //Set accumlated score
-var count=0;
-count++;
+// var count=0;
+// count++;
 
 //question and results
 function iterate(id) {
@@ -85,7 +85,8 @@ var seleted="";
     seleted = op1.value;
     if (seleted =="true"){
     result[0].innerHTML ="Correct";
-    sum.innerHTML=count++;}
+    // sum.innerHTML=count++;
+}
     else {
         result[0].innerHTML ="Wrong";}
 })
@@ -172,7 +173,7 @@ function renderscoreini() {
     if (submit !==null) {
 
 //WIP
-    document.getElementById("scoreini").innerHTML=submitName.initial;}
+    document.getElementById("scoreini").innerHTML=submit.initial;}
     else {
         return;
     }
