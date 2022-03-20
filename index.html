@@ -13,9 +13,9 @@
  <button for ="viewhighscore"> View Highscore</button>
  <!--show score result -->
  <p></p>
-   
- <lable for="timer : ">Timer</lable>
- <p id="sec"></p>
+  
+ <!--timer-->
+ <p>Timer<span id="timer">60</span></p>
      </Header>
 
    <!---quiz-->
@@ -42,14 +42,14 @@
     <!--result page-->
      <div class="end" id="end">
         <h1>All done!</h1>
-        <!--todo xx-->
-        <p>Your final score is xx</p>
+        
+        <p>Your final score is: <span id="sum"></span></p>
         <form>
-          <label for="ini">Enter Initials:<label>
+          <label for="ini">Enter Initials:</label>
           <textarea id="ini" name="Initials"></textarea>
         
         <button id="submit">Submit</button>
-        </p>
+    
       </form>     
 
 
@@ -58,7 +58,7 @@
      <!--show score-->
 <div class="score"  id="score">
   <h1>HighScores</h1>
-  <label for="value">Result is: </label><input id="value" name="scoreini">
+  <p>Result is: <span id="scoreini"></span></p>
 </div>
 
     <script src="./assets/js/script.js"></script>

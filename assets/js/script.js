@@ -28,7 +28,7 @@ const Questions = [{
     }
 ]
 
-console.log(Questions[0]);
+// console.log(Questions[0]);
 
 //complete quiz, hide and show end//
 
@@ -38,6 +38,9 @@ console.log(Questions[0]);
  
 //Set Start
 var start =true;
+
+//Set Score
+var count=0;
 
 //question and results
 function iterate(id) {
@@ -77,7 +80,8 @@ var seleted="";
    op1.addEventListener ("click", () => {
     seleted = op1.value;
     if (seleted =="true"){
-    result[0].innerHTML ="Correct";}
+    result[0].innerHTML ="Correct";
+    count ++;}
     else {
         result[0].innerHTML ="Wrong";}
 })
@@ -86,7 +90,8 @@ var seleted="";
     op2.addEventListener ("click", () => {
         seleted = op2.value;
         if (seleted =="true"){
-        result[0].innerHTML ="Correct";}
+        result[0].innerHTML ="Correct";
+        count ++;}
         else {
             result[0].innerHTML ="Wrong";}
     })
@@ -95,7 +100,8 @@ var seleted="";
    op3.addEventListener ("click", () => {
     seleted = op3.value;
     if (seleted =="true"){
-    result[0].innerHTML ="Correct";}
+    result[0].innerHTML ="Correct";
+    count ++;}
     else {
         result[0].innerHTML ="Wrong";}
 })
@@ -104,7 +110,8 @@ var seleted="";
    op4.addEventListener ("click", () => {
     seleted = op4.value;
     if (seleted =="true"){
-    result[0].innerHTML ="Correct";}
+    result[0].innerHTML ="Correct";
+    count ++;}
     else {
         result[0].innerHTML ="Wrong";}
 })
@@ -119,39 +126,18 @@ var seleted="";
 const next = document.getElementsByClassName('next')[0];
 var id=0;
 
-// next.addEventListener ("click", () => {
-//     start=false;
-//     if (id <3) {
-//         id++;
-//         iterate(id);}
-     
-//     if (id=3) {
-//         document.querySelector('section').style.display ="none";
-//         document.getElementById('end').style.display="block";
-//         break;}
-
-// }
-// )
-
 next.addEventListener ("click", () => {
     start=false;
-    switch(id) {
-        case id<3:
+    if (id <3) {
         id++;
-        iterate(id);
-        break;
+        iterate(id);}
      
-    
-        case id=3:
+    else {
         document.querySelector('section').style.display ="none";
         document.getElementById('end').style.display="block";
-        break;
-         }
+        }
 
-    
-}
-)
-
+});
 
 
 
@@ -160,22 +146,67 @@ next.addEventListener ("click", () => {
 //define submit
 const savedName=document.getElementById("ini");
 const submitButton=document.getElementById("submit");
+const scoreini=document.getElementById("scoreini");
+//WIP,define sum count score
+const sum=document.getElementById("sum");
 
 //submit function, put value as localstorage
 
-submitButton.addEventListener ("click", function(event) {
-    event.preventDefault();
+function saveini () {
 
     const submit= {
-        initial: savedName.value,
+        initial: savedName.value
     };
 
  localStorage.setItem ("submit",JSON.stringify(submit));
- renderMessage();  
-    
+}
+
+
+function renderscoreini() {
+    const submitName=JSON.parse(localStorage.getItem("submit"));
+    if (submit !==null) {
+//WIP
+   document.getElementById('end').style.display ="none";
+   document.getElementById('score').style.display="block";
+//WIP
+    document.getElementById("scoreini").innerHTML=submitName.initial;}
+    else {
+        return;
+    }
+}
+
+submitButton.addEventListener ("click", function(event) {
+   event.preventDefault();
+   saveini();
+   renderscoreini();
+   
 });
 
-function renderMessage() {
-    const submitName=JSON.parse(localStorage.getItem("submit"));
-    document.getElementById("value").textContent="- "+submitName.initial
+//init () function fires when the page is loaded
+function init() {
+    renderscoreini();
 }
+
+init();
+
+//WIP, sum the score
+// function sumcount () {
+//     sum.textContent=count.value;
+// }
+
+// sumcount();
+
+//timer, countdown
+timeLeft=60;
+
+function countdown() {
+
+timeLeft--;
+document.getElementById("timer").innerHTML= String(timeLeft);
+
+if (timeLeft >0) {
+    setTimeout(countdown,1000);
+}
+};
+
+setTimeout(countdown,1000);
